@@ -1,4 +1,4 @@
-package org.example.Categoria;
+package ar.edu.uba.fi.Categoria;
 
 public class Basico implements Categoria{
     public double calcularRecargoPlaza(double precio){

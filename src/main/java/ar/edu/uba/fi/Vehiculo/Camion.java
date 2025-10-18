@@ -1,4 +1,4 @@
-package org.example.Vehiculo;
+package ar.edu.uba.fi.Vehiculo;
 
 public class Camion extends Vehiculo {
 

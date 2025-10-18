@@ -1,4 +1,4 @@
-package org.example.Vehiculo;
+package ar.edu.uba.fi.Vehiculo;
 
 public class Microbus extends Vehiculo{
     private final double base;

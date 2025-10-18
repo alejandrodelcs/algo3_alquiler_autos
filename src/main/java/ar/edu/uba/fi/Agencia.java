@@ -1,6 +1,7 @@
-package org.example;
+package ar.edu.uba.fi;
 
-import org.example.Vehiculo.Vehiculo;
+import ar.edu.uba.fi.Inmueble.Inmueble;
+import ar.edu.uba.fi.Vehiculo.Vehiculo;
 
 import java.util.ArrayList;
 
@@ -8,22 +9,37 @@ public class Agencia {
 
     private ArrayList<Vehiculo> vehiculos;
     private ArrayList<Cliente> clientes;
+    private ArrayList<Inmueble> inmuebles;
+
     public Agencia() {
         this.vehiculos = new ArrayList<>();
         this.clientes = new ArrayList<>();
+        this.inmuebles = new ArrayList<>();
     }
 
 
-    public void registrarVehiculo(Vehiculo vehiculo) {
-        if (existeVehiculo(vehiculo.getPatente())){
+    public void registrarVehiculo(Vehiculo vehiculoNuevo) {
+        if (existeVehiculo(vehiculoNuevo)){
             throw new PatenteDuplicadaError();
         }
-        this.vehiculos.add(vehiculo);
+        this.vehiculos.add(vehiculoNuevo);
     }
 
-    public boolean existeVehiculo(String patente) {
+    public void registrarInmueble(Inmueble inmuebleNuevo) {
+        if (existeInmueble(inmuebleNuevo)){
+            throw new InmuebleDuplicadoError();
+        }
+        this.inmuebles.add(inmuebleNuevo);
+    }
+
+    public boolean existeInmueble(Inmueble  inmuebleNuevo) {
+        return inmuebles.stream()
+                .anyMatch(inmueble -> inmueble.esIgual(inmuebleNuevo));
+    }
+
+    public boolean existeVehiculo(Vehiculo vehiculoNuevo) {
         return vehiculos.stream()
-                .anyMatch(vehiculo -> vehiculo.getPatente().equals(patente));
+                .anyMatch(vehiculo -> vehiculo.esIgual(vehiculoNuevo));
     }
 
     public boolean existeCliente(int id) {
@@ -38,8 +54,8 @@ public class Agencia {
         this.clientes.add(cliente);
     }
 
-    public Alquiler asignarAlquiler(Vehiculo vehiculo, Cliente cliente, int dias) {
-        return cliente.alquilar(vehiculo, dias);
+    public Alquiler asignarAlquiler(Alquilable alquilable, Cliente cliente, int dias) {
+        return cliente.alquilar(alquilable, dias);
     }
 
     private ArrayList<Alquiler> obtenerAlquileresCliente(Cliente cliente) {

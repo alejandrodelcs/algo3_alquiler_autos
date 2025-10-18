@@ -1,11 +1,13 @@
-import org.example.Alquiler;
-import org.example.Blindaje.Blindado;
-import org.example.Blindaje.SinBlindar;
-import org.example.Categoria.Basico;
-import org.example.Categoria.Premium;
-import org.example.Cliente;
-import org.example.Inmueble.Cabania;
-import org.example.Vehiculo.Auto;
+import ar.edu.uba.fi.Alquiler;
+import ar.edu.uba.fi.Blindaje.Blindado;
+import ar.edu.uba.fi.Blindaje.SinBlindar;
+import ar.edu.uba.fi.Categoria.Basico;
+import ar.edu.uba.fi.Categoria.Premium;
+import ar.edu.uba.fi.Cliente;
+import ar.edu.uba.fi.Inmueble.Cabania;
+import ar.edu.uba.fi.Inmueble.Depto;
+import ar.edu.uba.fi.Inmueble.Hotel;
+import ar.edu.uba.fi.Vehiculo.Auto;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
@@ -87,7 +89,7 @@ public class ClienteTest {
     }
 
     @Test
-    public void teste04ElClienteQuiereAlquilarUnaCabañaSeEsperaElSiquienteResultado(){
+    public void teste04ElClienteQuiereAlquilarUnaCabaniaSeEsperaElSiquienteResultado(){
 
         Cliente  cliente = new Cliente();
 
@@ -101,6 +103,41 @@ public class ClienteTest {
 
         assertEquals(precioEsperado, precioObtenido,0.01);
 
+
+    }
+
+    @Test
+    public void teste05ElClienteQuiereAlquilarUnHotelSeEsperaElSiquienteResultado(){
+
+        Cliente  cliente = new Cliente();
+
+        Hotel hotel = new Hotel("Av Libertador 1234", 5);
+
+        Alquiler alquiler = cliente.alquilar(hotel,2);
+
+        double precioObtenido = alquiler.obtenerPrecio();
+
+        double precioEsperado = 2510;
+
+        assertEquals(precioEsperado, precioObtenido,0.01);
+
+
+    }
+
+    @Test
+    public void teste06ElClienteQuiereAlquilarUnDeptoSeEsperaElSiquienteResultado(){
+
+        Cliente  cliente = new Cliente();
+
+        Depto depto = new Depto("Av Libertador 1234", 5);
+
+        Alquiler alquiler = cliente.alquilar(depto,2);
+
+        double precioObtenido = alquiler.obtenerPrecio();
+
+        double precioEsperado = 50;
+
+        assertEquals(precioEsperado, precioObtenido,0.01);
 
 
     }

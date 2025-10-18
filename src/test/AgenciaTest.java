@@ -1,10 +1,11 @@
-import org.example.Agencia;
-import org.example.Alquiler;
-import org.example.Blindaje.SinBlindar;
-import org.example.Categoria.Basico;
-import org.example.Cliente;
-import org.example.PatenteDuplicadaError;
-import org.example.Vehiculo.Auto;
+import ar.edu.uba.fi.Agencia;
+import ar.edu.uba.fi.Alquiler;
+import ar.edu.uba.fi.Blindaje.SinBlindar;
+import ar.edu.uba.fi.Categoria.Basico;
+import ar.edu.uba.fi.Cliente;
+import ar.edu.uba.fi.Inmueble.Depto;
+import ar.edu.uba.fi.PatenteDuplicadaError;
+import ar.edu.uba.fi.Vehiculo.Auto;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;
@@ -20,9 +21,7 @@ public class AgenciaTest {
         Auto auto = new Auto(500, "CherryQQ", "abc123", 4, categoria, blindaje);
         agencia.registrarVehiculo(auto);
 
-        String patenteAuto = "abc123";
-
-        assertTrue(agencia.existeVehiculo(patenteAuto));
+        assertTrue(agencia.existeVehiculo(auto));
     }
 
     @Test
@@ -93,7 +92,7 @@ public class AgenciaTest {
 
 
     @Test
-    public void test06LaAgenciaDeseaConocerTodosSusAlquileres(){
+    public void test06LaAgenciaDeseaConocerTodosSusAlquileresDeAutos(){
         Agencia agencia = new Agencia();
         Cliente cliente = new Cliente();
         Basico categoria = new Basico();
@@ -111,4 +110,24 @@ public class AgenciaTest {
         assertEquals(4228, precioTotal,0.01);
 
     }
+
+
+    @Test
+    public void test06LaAgenciaDeseaConocerTodosSusAlquileresDeInmuebles(){
+        Agencia agencia = new Agencia();
+        Cliente cliente = new Cliente();
+        Depto depto = new Depto("Av Libertador 1234", 5);
+
+        agencia.registrarInmueble(depto);
+        agencia.registrarCliente(cliente);
+
+        agencia.asignarAlquiler(depto, cliente, 2);
+        agencia.asignarAlquiler(depto, cliente, 5);
+
+        double precioTotal = agencia.obtenenerPrecioTotalAgenciaAlquileres();
+
+        assertEquals(175, precioTotal, 0.01);
+
+    }
 }
+

@@ -1,8 +1,8 @@
-import org.example.Vehiculo.Auto;
-import org.example.Blindaje.Blindado;
-import org.example.Categoria.Basico;
-import org.example.Categoria.Premium;
-import org.example.Blindaje.SinBlindar;
+import ar.edu.uba.fi.Vehiculo.Auto;
+import ar.edu.uba.fi.Blindaje.Blindado;
+import ar.edu.uba.fi.Categoria.Basico;
+import ar.edu.uba.fi.Categoria.Premium;
+import ar.edu.uba.fi.Blindaje.SinBlindar;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;

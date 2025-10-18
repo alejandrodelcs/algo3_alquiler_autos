@@ -1,6 +1,6 @@
-package org.example.Vehiculo;
+package ar.edu.uba.fi.Vehiculo;
 
-import org.example.Alquilable;
+import ar.edu.uba.fi.Alquilable;
 
 abstract public class Vehiculo implements Alquilable {
 
@@ -12,7 +12,7 @@ abstract public class Vehiculo implements Alquilable {
         this.patente = patente;
     }
 
-    public String getPatente() {
-        return  patente;
+    public boolean esIgual(Vehiculo vehiculoNuevo) {
+        return vehiculoNuevo.patente.equals(patente);
     }
 }

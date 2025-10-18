@@ -1,5 +1,5 @@
 
-import org.example.Vehiculo.Microbus;
+import ar.edu.uba.fi.Vehiculo.Microbus;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;

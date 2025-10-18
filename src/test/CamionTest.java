@@ -1,4 +1,4 @@
-import org.example.Vehiculo.Camion;
+import ar.edu.uba.fi.Vehiculo.Camion;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;

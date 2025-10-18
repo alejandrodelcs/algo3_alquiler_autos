@@ -1,4 +1,4 @@
-package org.example.Categoria;
+package ar.edu.uba.fi.Categoria;
 
 public class Premium implements Categoria{
     @Override

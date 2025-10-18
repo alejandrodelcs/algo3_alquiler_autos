@@ -1,7 +1,4 @@
-package org.example;
-import org.example.Inmueble.Cabania;
-import org.example.Inmueble.Inmueble;
-import org.example.Vehiculo.Vehiculo;
+package ar.edu.uba.fi;
 
 
 import java.util.ArrayList;

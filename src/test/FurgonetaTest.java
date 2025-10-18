@@ -1,4 +1,4 @@
-import org.example.Categoria.Furgoneta;
+import ar.edu.uba.fi.Categoria.Furgoneta;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;

@@ -1,4 +1,4 @@
-import org.example.Inmueble.Cabania;
+import ar.edu.uba.fi.Inmueble.Cabania;
 import org.junit.Test;
 
 import static junit.framework.TestCase.assertEquals;

@@ -1,7 +1,7 @@
-package org.example.Vehiculo;
+package ar.edu.uba.fi.Vehiculo;
 
-import org.example.Blindaje.Blindaje;
-import org.example.Categoria.Categoria;
+import ar.edu.uba.fi.Blindaje.Blindaje;
+import ar.edu.uba.fi.Categoria.Categoria;
 
 public class Auto extends Vehiculo {
 

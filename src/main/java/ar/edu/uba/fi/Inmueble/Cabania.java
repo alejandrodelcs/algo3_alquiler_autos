@@ -1,4 +1,4 @@
-package org.example.Inmueble;
+package ar.edu.uba.fi.Inmueble;
 
 public class Cabania extends Inmueble {
 

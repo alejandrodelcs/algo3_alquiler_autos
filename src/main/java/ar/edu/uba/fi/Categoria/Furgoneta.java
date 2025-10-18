@@ -1,4 +1,4 @@
-package org.example.Categoria;
+package ar.edu.uba.fi.Categoria;
 
 public class Furgoneta {
     private final int base;

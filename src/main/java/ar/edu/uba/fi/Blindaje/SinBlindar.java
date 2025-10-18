@@ -1,4 +1,4 @@
-package org.example.Blindaje;
+package ar.edu.uba.fi.Blindaje;
 
 public class SinBlindar implements Blindaje {
     @Override
